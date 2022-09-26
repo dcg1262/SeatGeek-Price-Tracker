@@ -1,6 +1,6 @@
-var seatgeekClientId = 'MjUyNDM2MzR8MTY0MTI3MTAyNy45MzQ2MzMz';
-var emailToAlert = '9563750195@tmomail.net';
-var numberToAlert = 9563750195;
+var seatgeekClientId = '';
+var emailToAlert = '';
+var numberToAlert = ;
 
 // List of event objects with id and max_price you are willing to pay
 var events = [
