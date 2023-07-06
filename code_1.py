@@ -4,17 +4,23 @@ import requests
 import config
 
 seatgeekClientId = config.api_key
-events = [
-    {
-        # Stadium of Fire - Journey
-        id: 5992341,
-        maxPrice: 100,
-    }
-]
-for event in events:
-    url = (
-        "https://api.seatgeek.com/2/events/"
-        + event.id.toString()
-        + "?client_id="
-        + seatgeekClientId
-    )
+eventID = 5964238  # Dallas Cowboys vs New York Jets ID
+url = (
+    "https://api.seatgeek.com/2/events/"
+    + str(eventID)
+    + "?client_id="
+    + str(seatgeekClientId)
+)
+response = requests.get(url)
+
+data = response.json()
+eventDesc = (
+    data["title"]
+    + " (ID "
+    + str(eventID)
+    + ") at "
+    + data["venue"]["name"]
+    + " in "
+    + data["venue"]["city"]
+)
+print(eventDesc)
